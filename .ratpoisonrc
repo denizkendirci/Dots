@@ -1,0 +1,30 @@
+exec /usr/bin/rpws init 5 -k
+exec xrandr -s 1920x1080
+exec xsetroot -cursor_name left_ptr
+exec nitrogen --restore
+exec picom --config /home/mortician/.config/picom/picom.conf
+
+escape Super_L
+
+unbind 1
+unbind 2
+unbind 3
+unbind 4
+unbind 5
+unbind c
+unbind d
+unbind S
+
+bind 1 exec rpws 1
+bind 2 exec rpws 2
+bind 3 exec rpws 3
+bind 4 exec rpws 4
+bind 5 exec rpws 5
+bind Left rpwsp
+bind Right rpwsn
+
+bind c exec alacritty
+bind d exec rofi -show drun
+
+bind w hsplit
+bind q quit
