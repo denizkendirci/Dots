@@ -2,15 +2,15 @@
 # General settings an key bindings
 ######################
 
-bind c exec foot
+bind Return exec foot
 bind d exec wofi -S drun
 
 workspaces 5
-background 0.50 0.70 0.65
+background 0.0 0.0 0.0
 
 escape L-z
 
-bind q close
+bind c close
 bind s hsplit
 bind w vsplit
 bind E only
