@@ -1,4 +1,4 @@
 export PATH="/home/mortician/bin:$PATH"
-alias l='ls -alF'
+alias l='ls -alhtF --color=auto'
 alias ll='ls -l'
 neofetch
