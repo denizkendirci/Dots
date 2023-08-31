@@ -8,7 +8,8 @@ bind d exec wofi -S drun
 workspaces 5
 background 0.0 0.0 0.0
 
-escape L-z
+#escape L-z
+escape C-t
 
 bind c close
 bind s hsplit
