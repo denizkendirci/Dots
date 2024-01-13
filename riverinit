@@ -16,12 +16,12 @@ riverctl map normal Super Return spawn foot
 # Applications
 riverctl spawn "setxkbmap -layout tr"
 riverctl spawn "swaybg -m fill -i /home/mortician/Pictures/wallpaper.png &"
-riverctl spawn "levee"
+riverctl spawn "waybar"
 riverctl map normal Super D spawn "wofi -S drun"
 
 #Hide/Show Bar
-riverctl map normal Super B spawn "levee"
-riverctl map normal Super N spawn "killall levee"
+riverctl map normal Super B spawn "waybar"
+riverctl map normal Super N spawn "killall waybar"
 
 # Super+Q to close the focused view
 riverctl map normal Super C close
