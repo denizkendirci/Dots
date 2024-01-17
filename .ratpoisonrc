@@ -27,4 +27,5 @@ bind c exec alacritty
 bind d exec rofi -show drun
 
 bind w hsplit
+bind W tmpwm /home/mortician/bin/cagewm
 bind q quit
