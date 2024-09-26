@@ -2,6 +2,7 @@ exec /usr/bin/rpws init 5 -k
 exec xrandr -s 1920x1080
 exec xsetroot -cursor_name left_ptr
 exec nitrogen --restore
+exec feh --bg-scale /home/mortician/Pics/Wallpaper.jpg
 exec picom --config /home/mortician/.config/picom/picom.conf
 
 escape Super_L
