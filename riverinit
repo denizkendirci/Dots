@@ -98,6 +98,15 @@ do
     riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
 done
 
+scratch_tag=$((1 << 20 ))
+
+riverctl map normal Super P toggle-focused-tags ${scratch_tag}		# toggle the scratchpad
+riverctl map normal Super+Shift P set-view-tags ${scratch_tag}		# send windows to the scratchpad
+
+# Set spawn tagmask to ensure new windows do not have the scratchpad tag unless explicitly set.
+all_but_scratch_tag=$(( ((1 << 32) - 1) ^ $scratch_tag ))
+riverctl spawn-tagmask ${all_but_scratch_tag}
+
 # Super+0 to focus all tags
 # Super+Shift+0 to tag focused view with all tags
 all_tags=$(((1 << 32) - 1))
