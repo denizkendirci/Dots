@@ -107,6 +107,33 @@ riverctl map normal Super+Shift P set-view-tags ${scratch_tag}		# send windows t
 all_but_scratch_tag=$(( ((1 << 32) - 1) ^ $scratch_tag ))
 riverctl spawn-tagmask ${all_but_scratch_tag}
 
+# Add this line to your init to launch the terminal when River starts.
+# It will have the tag, be hidden, and wait for Super+P.
+foot --app-id foot-scratchpad &
+
+# Define the application ID for the scratchpad instance of Foot
+APP_ID='foot-scratchpad' 
+
+# The scratchpad tag you already defined (1 << 20)
+scratch_tag=$((1 << 20))
+
+# --- Rules for the Scratchpad Window ---
+
+# 1. Apply the scratchpad tag to the window on launch
+# This is crucial: It marks the window for the keybindings you already use.
+riverctl rule app-id "${APP_ID}" add-tag ${scratch_tag}
+
+# 2. Force the window to be floating (stops it from tiling)
+riverctl rule tagged ${scratch_tag} float
+
+# 3. Ensure the window always stays on top (the 'layer' rule)
+riverctl rule tagged ${scratch_tag} layer top
+
+# 4. Set a size and position for the floating window
+# Format: WxH+X+Y (e.g., 1200x600 centered on a 1920x1080 screen)
+riverctl rule tagged ${scratch_tag} set-geometry 1200x600+360+240
+
+
 # Super+0 to focus all tags
 # Super+Shift+0 to tag focused view with all tags
 all_tags=$(((1 << 32) - 1))
