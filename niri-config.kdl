@@ -1,0 +1,67 @@
+// ==========================================
+// AUTOSTART & ENVIRONMENT
+// ==========================================
+spawn-at-startup "swaybg" "-i" "/path/to/your/wallpaper.jpg" "-m" "fill"
+
+// ==========================================
+// KEYBINDINGS
+// ==========================================
+binds {
+    // Core Applications
+    Mod+Return { spawn "foot"; }                 // Terminal
+    Mod+D      { spawn "fuzzel"; }               // App Launcher
+    Mod+Q      { close-window; }                 // Kill active window
+
+    // 1. Switch Active Window (Left / Right Arrow)
+    Mod+Left   { focus-column-left; }
+    Mod+Right  { focus-column-right; }
+
+    // 2. Switch Workspace (Up / Down Arrow)
+    Mod+Up     { focus-workspace-up; }
+    Mod+Down   { focus-workspace-down; }
+
+    // 3. Move Window to Workspace (Mod + Shift + Up / Down Arrow)
+    Mod+Shift+Up   { move-column-to-workspace-up; }
+    Mod+Shift+Down { move-column-to-workspace-down; }
+
+    // Direct Workspace Jump (Mod + Number)
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+
+    // Send Active Window to Workspace (Mod + Shift + Number)
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+
+    // Window Re-positioning (Shuffle order horizontally)
+    Mod+Ctrl+Left  { move-column-left; }
+    Mod+Ctrl+Right { move-column-right; }
+
+    // Ratpoison-like Sizing Controls
+    Mod+R      { switch-preset-column-width; }   // Cycles width profiles
+    Mod+F      { maximize-column; }              // Fills screen (Pseudo-fullscreen)
+    Mod+Shift+F { fullscreen-window; }           // True hardware fullscreen
+
+    // System Commands
+    Mod+Shift+E { quit; }                        // Exit Niri completely
+}
+
+// ==========================================
+// MINIMALIST VISUAL LAYOUT
+// ==========================================
+layout {
+    gaps 0                                       // Strict edge-to-edge screens
+    
+    focus-ring {
+        width 2.0
+        active-color "#7fc8ff"                   // Active border color
+        inactive-color "#333333"
+    }
+    
+    border { off; }
+}
