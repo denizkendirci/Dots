@@ -3,5 +3,5 @@ alias l='ls -alhtF --color=auto'
 alias ll='ls -l'
 alias shutdown='sudo shutdown now'
 #yay --save --diffmenu=false --editmenu=false
-alias update='yay -Syu --noconfirm'
-neofetch
+alias update='paru -Syu --noconfirm'
+fastfetch
