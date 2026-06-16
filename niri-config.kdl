@@ -2,6 +2,7 @@
 // AUTOSTART & ENVIRONMENT
 // ==========================================
 spawn-at-startup "swaybg" "-i" "/path/to/your/wallpaper.jpg" "-m" "fill"
+prefer-no-csd
 
 // ==========================================
 // KEYBINDINGS
@@ -55,13 +56,24 @@ binds {
 // MINIMALIST VISUAL LAYOUT
 // ==========================================
 layout {
-    gaps 0                                       // Strict edge-to-edge screens
-    
+    gaps 8                                       // Strict edge-to-edge screens
+
+    default-column-width { proportion 1.0; }
+
     focus-ring {
         width 2.0
         active-color "#7fc8ff"                   // Active border color
         inactive-color "#333333"
     }
-    
+
+    border {
+        width 2.0
+        active-color "#7fc8ff"
+        inactive-color "#333333"
+    }
     border { off; }
+}
+window-rule {
+    geometry-corner-radius 10
+    clip-to-geometry true
 }
